@@ -1,0 +1,22 @@
+# Release pipeline: https://github.com/OHNope/kicad-release
+name: PCB release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      fab:
+        description: Build the fabrication outputs instead of the design release
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    uses: OHNope/kicad-release/.github/workflows/pcb-release.yml@main
+    with:
+      fab: ${{ inputs.fab == true }}
+    secrets: inherit

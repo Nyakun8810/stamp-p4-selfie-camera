@@ -1,0 +1,26 @@
+# KiCad backups, autosaves, locks and caches
+*-backups/
+_autosave-*
+\#auto_saved_files\#
+*.lck
+~*.lck
+*.bak
+*.kicad_prl
+fp-info-cache
+.history/
+
+# ERC/DRC reports: local check results, CI reruns both
+*-erc.rpt
+*-drc.rpt
+*-erc.json
+*-drc.json
+
+# KiBot / release outputs (CI regenerates them)
+output/
+/*.zip
+
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
